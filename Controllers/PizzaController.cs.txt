@@ -1,0 +1,35 @@
+using Microsoft.AspNetCore.Mvc;
+using YourProjectName.Models;
+using YourProjectName.Services;
+
+namespace YourProjectName.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PizzaController : ControllerBase
+    {
+        private readonly PizzaService _pizzaService;
+
+        public PizzaController(PizzaService pizzaService)
+        {
+            _pizzaService = pizzaService;
+        }
+
+        [HttpGet]
+        public IActionResult GetPizzas() => Ok(_pizzaService.GetAllPizzas());
+
+        [HttpGet("{id}")]
+        public IActionResult GetPizza(int id)
+        {
+            var pizza = _pizzaService.GetPizzaById(id);
+            return pizza == null ? NotFound() : Ok(pizza);
+        }
+
+        [HttpPost]
+        public IActionResult AddPizza([FromBody] Pizza pizza)
+        {
+            _pizzaService.AddPizza(pizza);
+            return CreatedAtAction(nameof(GetPizza), new { id = pizza.Id }, pizza);
+        }
+    }
+}
