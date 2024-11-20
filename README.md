@@ -12,7 +12,7 @@ Uma aplicação REST API simples desenvolvida com ASP.NET Core que utiliza Postg
 - Organização Modular: Separação clara entre Controllers, Services, e Models.
 - Facilidade de Expansão: Base ideal para adicionar mais recursos, entidades e funcionalidades.
 ## 🛠️ Tecnologias Utilizadas
-ASP.NET Core (7.0)
-Entity Framework Core com suporte a PostgreSQL
-C#
-PostgreSQL
+- ASP.NET Core (7.0)
+- Entity Framework Core com suporte a PostgreSQL
+- C#
+- PostgreSQL
