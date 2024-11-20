@@ -1,4 +1,4 @@
-# Pizzaria API
+# PizzariaAPI
 
 Uma aplicação REST API simples desenvolvida com ASP.NET Core que utiliza PostgreSQL como banco de dados. Esta API gerencia informações de usuários e pizzas, proporcionando um exemplo funcional de como estruturar um backend com serviços, controladores e modelos.
 
